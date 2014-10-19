@@ -148,7 +148,33 @@ function toImage(){
 }
 
 
+
+
 window.addEventListener("load", init, false);
 window.addEventListener("mouseup", buttonUp, false);
 window.addEventListener("mousedown", function (e){
 	buttonDown(e);}, false);
+
+
+// The following is faked up, aproximate code from a stackoverflow post 
+// for the sake of the GitHub assingment, it doesn't work. It's meant to 
+// save a canvas image to a file on the remote server
+
+function saveImage() {
+    var canvasData = canvas.toDataURL("image/png");
+    var xmlHttpReq = false;       
+    if (window.XMLHttpRequest) {
+        ajax = new XMLHttpRequest();
+    }
+
+    else if (window.ActiveXObject) {
+        ajax = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+   ajax.open('POST', 'testSave.php', false);
+   ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+   ajax.onreadystatechange = function() {
+        console.log(ajax.responseText);
+    }
+   ajax.send("imgData="+canvasData);
+}
+
