@@ -182,3 +182,18 @@ function saveImage() {
    ajax.send("imgData="+canvasData);
 }
 
+// more junk code for branch merger! Yes thats JQuery, no it isn't installed.
+
+$.ajax({
+  type: "POST",
+  url: "script.php",
+  data: { 
+     imgBase64: dataURL
+  }
+}).done(function(o) {
+  console.log('saved'); 
+  // If you want the file to be visible in the browser 
+  // - please modify the callback in javascript. All you
+  // need is to return the url to the file, you just saved 
+  // and than put the image in your browser.
+});
