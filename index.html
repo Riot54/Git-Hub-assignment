@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Drawing App</title>
+<link href="css/main.css" rel="stylesheet" type="text/css" media="screen">
+<link href="css/range.css" rel="stylesheet" type="text/css" media="screen">
+<link rel="stylesheet" type="text/css" href="css/flaticon.css"> 
+
+<script src="js/easeljs-0.7.1.min.js"></script>
+
+
+<script src="js/main.js"></script>
+</head>
+<body>
+<h1 class="hidden">Main Body</h1>
+<section id="container">
+    <h2 class="hidden">Tools</h2>
+    <div id="tools">
+        <span class="settings">
+            <button id="export" class="button"><span class="buttontext"><i class="flaticon-save15"></i>Save Image</span></button>
+        </span>
+        <span class="settings">
+            <button id="reset" class="button"><span class="buttontext"><i class="flaticon-reload"></i>Reset Image</span></button>
+        </span>
+        <span class="settings">
+            Size: <span id="brushSize">1</span>
+            <input id="sizeRange" type="range" min="1" max="50" value="1"/>
+        </span>
+
+        <span class="settings">
+            Red: <span id="penRed">0</span>
+            <input id="redRange" class="colorRange" type="range" min="0" max="256" value="0"/>
+        </span>
+        <span class="settings">
+            Green: <span id="penGreen">0</span>
+            <input id="greenRange" class="colorRange" type="range" min="0" max="256" value="0"/>
+        </span>
+
+        <span class="settings">
+            Blue: <span id="penBlue">0</span>
+            <input id="blueRange" class="colorRange" type="range" min="0" max="256" value="0"/>
+        </span>
+
+        <span class="settings">
+            Pen Speed: <span id="penSpeed">1</span>
+            <input id="smoothRange" type="range" min="1" max="10" value="1"/>
+        </span>
+     
+        <span class="settings">
+            Erase: <input type="checkbox" id="toggle" />  
+        </span>
+        <span class="settings">
+            Brush Shape: 
+            <select name="brushShape" id="brushShape">
+                <option value="0">Flat</option>
+                <option value="1">Round</option>
+                <option value="2">Square</option>
+            </select>
+        </span>
+    </div>
+</section>
+    <section id="theImage">
+        <h2 class="hidden">Drawing pad</h2>
+        <canvas width="638" height="825" id="myCanvas">
+        Update your browser please!
+        </canvas>
+    </section>
+     </body>
+</html>

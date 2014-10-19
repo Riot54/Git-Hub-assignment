@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+/* I wanted to keep this seperate since it was such a long and complex styling I found on the internet.*/
+
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 230px;
+    height: 5px;
+    border-radius: 5px;
+    background: #ddd;
+
+ }
+
+ input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: white;
+    margin-top: -1px;
+}
+
+ input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: white;
+    margin-top: -1px;
+}
+
+
+input[type=range]::-moz-range-track {
+    width: 230px;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 5px;
+}
+
+input[type=range]:-moz-focusring{
+    outline: none;
+    outline-offset: -1px;
+}
+
+
+ input[type=range]:focus {
+    outline: none;
+    background: #ccc;
+}
