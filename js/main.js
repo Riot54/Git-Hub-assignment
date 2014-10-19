@@ -30,6 +30,9 @@ function init() {
 	var sizeSlide = document.querySelector("#sizeRange");
 	sizeSlide.addEventListener("input", function () {setPenSize();}, false);
 
+	var saveToServer = document.querySelector("#serverSave");
+	saveToServer.addEventListener("click", saveImage, false);
+
 	//I know global variables are awfull, but it works
 	redSlide = document.querySelector("#redRange");
 	greenSlide = document.querySelector("#greenRange");
@@ -158,7 +161,8 @@ window.addEventListener("mousedown", function (e){
 
 // The following is faked up, aproximate code from a stackoverflow post 
 // for the sake of the GitHub assingment, it doesn't work. It's meant to 
-// save a canvas image to a file on the remote server
+// save a canvas image to a file on the remote server. I also added an 
+//event listener up top and the button in index.html
 
 function saveImage() {
     var canvasData = canvas.toDataURL("image/png");
